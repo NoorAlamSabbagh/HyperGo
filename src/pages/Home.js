@@ -1,5 +1,3 @@
-// src/pages/Home.js
-
 import React, { useState, useEffect } from 'react';
 import { fetchVideos } from '../services/api'; // Import the fetchVideos function
 
@@ -12,8 +10,9 @@ const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
 
+
+  
   useEffect(() => {
-    // Fetch videos when the component mounts and when currentPage changes
     fetchVideos(currentPage)
       .then((response) => {
         setVideos([...videos, ...response.data]); // Append fetched videos to the existing list
